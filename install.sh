@@ -1,4 +1,3 @@
-pip install --user -y subprocess
-pip install --user -y schedule
-echo "python schedule.py" >> ~/.bashrc
-source ~\.bashrc
+pip install --user --yes schedule
+grep -qxF 'python schedule.py' /$HOME/.bashrc || echo 'python schedule.py' >> /$HOME/.bashrc
+source /$HOME/.bashrc
