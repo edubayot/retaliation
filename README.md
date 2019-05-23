@@ -1,6 +1,6 @@
 This is just a joke.
 
-##Steps to install
+## Steps to install
 
 1. Place `bg.sh` inside user's home directory.
 2. Replace "target_victim" with the actual user name.
