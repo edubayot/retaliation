@@ -26,6 +26,7 @@ def job():
     return
 
 def greetings():
+
     sp = Popen(['espeak-ng', 'Hello Christiana, checkout your desktop, bitch!'])
     return
 
