@@ -9,6 +9,7 @@ import random
 import string
 from subprocess import Popen
 import pyautogui
+import threading
 
 def job():
     url = 'https://picsum.photos/id/933/1920/1080'
@@ -19,9 +20,13 @@ def job():
     urllib.request.urlretrieve(url, fileName)
     bgCommand = "gsettings set org.gnome.desktop.background picture-uri file://"+fileName
     bg = Popen(bgCommand.split(' '))
-    sp = Popen(['espeak-ng', 'Hello Christiana, checkout your desktop, bitch!'])
+    threading.Thread(target=greetings).start()
+    threading.Thread(target=crazyMouse).start()
     pyautogui.hotkey("winleft", "d")
-    crazyMouse()
+    return
+
+def greetings():
+    sp = Popen(['espeak-ng', 'Hello Christiana, checkout your desktop, bitch!'])
     return
 
 def crazyMouse():
@@ -31,6 +36,7 @@ def crazyMouse():
      pyautogui.moveRel(0, -75, 0.5)
      pyautogui.moveRel(-75, 0, 0.5)
      return
+
 
 schedule.every().day.at("14:00").do(job)
 
