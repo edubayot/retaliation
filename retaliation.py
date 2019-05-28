@@ -10,6 +10,7 @@ import string
 from subprocess import Popen
 import pyautogui
 import threading
+import talkey
 
 def job():
     url = 'https://picsum.photos/id/933/1920/1080'
